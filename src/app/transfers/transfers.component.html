@@ -1,0 +1,65 @@
+<div class="container">
+<div class="panel-body">
+    <br>
+    <h3>Enter the bank details</h3>
+    <form (ngSubmit)="onPay(pay)" #pay="ngForm">
+        <br>
+            <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label  >Account Number</label>
+                        <input type="number" name="Account_Number" id="Account_Number" class="form-control input-sm" placeholder="Account_Number" ngModel required >
+                    </div>
+                </div>
+                <br>
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label  >Re enter Account Number</label>
+                        <input type="number" name="Re_enter_Account_Number" id="Re_enter_Account_Number" class="form-control input-sm" placeholder="Re enter Account number" ngModel required>
+                    </div>
+                </div>
+            </div>
+             <br>
+             <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label> IFSC</label>
+                        <input type="text" name="IFSC" id="name" class="form-control input-sm" placeholder="IFSC" ngModel required >
+                    </div>
+                </div>
+            </div>
+            <br>
+             <div class="row">
+                <div class="col-xs-6 col-sm-6 col-md-6">
+                    <div class="form-group">
+                        <label> Recipient Name</label>
+                        <input type="text" name="recipient_name" id="recipient_name" class="form-control input-sm" placeholder="Name" ngModel required >
+                    </div>
+                </div>
+            </div>
+            <br>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                    <label  >Password</label>
+                    <input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password" ngModel required >
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-xs-6 col-sm-6 col-md-6">
+                <div class="form-group">
+                    <label  >Amount</label>
+                    <input type="number" name="Amount" id="Amount" class="form-control input-sm" placeholder="Amount" ngModel required >
+                </div>
+            </div>
+        </div>
+        <br>
+        <button type="submit" value="onPay" class="btn btn-secondary btn-lg btn-block">Pay Now</button>
+        <div class="alert alert-danger" role="alert" *ngIf="FormValid">
+            Please fill all fields.
+        </div>
+    </form>
+</div>
+</div>

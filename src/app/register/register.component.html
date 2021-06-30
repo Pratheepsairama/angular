@@ -1,0 +1,82 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet"id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<nav class="navbar navbar-expand-lg navbar-light navbar-laravel">
+    <div class="container">
+        <b class="navbar-brand" href="">Bank</b>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <button class="btn btn-sm btn-outline-secondary" type="button" routerLink="/home">Sign In </button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container" >
+        <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+        	<div class="panel panel-default">
+        		<div class="panel-heading">
+			    		<h3 class="panel-title">Please sign up here </h3>
+			 			</div>
+			 			<div class="panel-body">
+			    		<form (ngSubmit)="onRegistration(registration)" #registration="ngForm">
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+										<label  >First Name</label>
+			                <input type="text" name="first_name" id="first_name" class="form-control input-sm" placeholder="First Name" ngModel required >
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+										<label  >Last Name</label>
+			    						<input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name" ngModel required>
+			    					</div>
+			    				</div>
+			    			</div>
+
+			    			<div class="form-group">
+								<label  >E-Mail</label>
+			    				<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address" ngModel required>
+			    			</div>
+                            <div class="form-group">
+								<label  >Phone Number</label>
+			    				<input type="number" name= "phone_number" id="number" class="form-control input-sm" placeholder="Phone Number"ngModel required >
+			    			</div>
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+										<label  >Password</label>
+			    						<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password" ngModel required >
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+										<label  >Confirm Password</label>
+			    						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password" ngModel required>
+			    					</div>
+			    				</div>
+			    			</div>
+			    			
+			    			<button type="submit" value="Register" class="btn btn-info btn-block">
+						 Register</button>
+			    		
+						 <div class="alert alert-danger" role="alert" *ngIf="FormValid">
+							Please fill all fields.
+						</div>
+			    		</form>
+			    	</div>
+	    		</div>
+    		</div>
+    	</div>
+    </div> 
+    <router-outlet></router-outlet>
